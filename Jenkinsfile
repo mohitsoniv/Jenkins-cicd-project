@@ -1,4 +1,4 @@
-pipeline { agent any tools { maven 'Maven 3.6.3' 
+pipeline { agent any tools { maven 'local_maven' 
                             // Ensure Maven is installed and configured in Jenkins jdk 'JDK 11' 
                             // Ensure JDK is installed and configured in Jenkins } stages { stage('Checkout') 
                             { steps { git 'https://github.com/mohitsoniv/Jenkins-cicd-project.git' } } stage('Build') 
