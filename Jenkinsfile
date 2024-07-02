@@ -15,6 +15,7 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sh 'mvn test'
+                junit stdioRetention: '', testResults: 'target/maven-archiver/*xml'
             }
         }
         stage('QA') {
