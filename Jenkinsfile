@@ -4,7 +4,9 @@ pipeline {
      tools {
         maven 'maven' 
     }
-
+    parameters {
+  string defaultValue: 'Mohit Soni', name: 'What is your Name?'
+}
     stages {
         stage('Build') {
             steps {
@@ -15,7 +17,6 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sh 'mvn test'
-                junit stdioRetention: '', testResults: 'target/maven-archiver/*xml'
             }
         }
         stage('QA') {
