@@ -3,6 +3,7 @@ pipeline {
     parameters {
   string defaultValue: 'Mohit Soni', name: 'What is your Name?'
 }
+    emailext body: 'Your build is Success.', recipientProviders: [contributor()], subject: 'About your pipeline ', to: 'mohitsoni.svs@gmailcom'
     tools { 
         maven 'maven'
     }
