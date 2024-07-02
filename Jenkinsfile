@@ -1,9 +1,5 @@
 pipeline {
     agent any
-
-     tools {
-        maven 'maven' 
-    }
     parameters {
   string defaultValue: 'Mohit Soni', name: 'What is your Name?'
 }
