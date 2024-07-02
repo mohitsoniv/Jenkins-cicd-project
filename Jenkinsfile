@@ -3,6 +3,9 @@ pipeline {
     parameters {
   string defaultValue: 'Mohit Soni', name: 'What is your Name?'
 }
+    tools { 
+        maven 'maven'
+    }
     stages {
         stage('Build') {
             steps {
