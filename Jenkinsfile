@@ -16,6 +16,7 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sh 'mvn test'
+                jacoco exclusionPattern: '**/*Test*.class', inclusionPattern: '**/*.class', sourceInclusionPattern: '**/*.java'
             }
         }
         stage('QA') {
