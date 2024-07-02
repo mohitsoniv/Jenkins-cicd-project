@@ -1,10 +1,10 @@
 pipeline {
     agent any
-    parameters {
-  string defaultValue: 'Mohit Soni', name: 'What is your Name?'
-}
-        maven 'maven'
+
+     tools {
+        maven 'maven' 
     }
+    
     stages {
         stage('Build') {
             steps {
@@ -14,8 +14,8 @@ pipeline {
         stage('Unit test') {
             steps {
                 echo 'Testing...'
-                sh 'mvn test'
-                jacoco exclusionPattern: '**/*Test*.class', inclusionPattern: '**/*.class', sourceInclusionPattern: '**/*.java'
+                sh 'test'
+                 jacoco exclusionPattern: '**/*Test*.class', inclusionPattern: '**/*.class', sourceInclusionPattern: '**/*.java'
             }
         }
         stage('QA') {
@@ -29,5 +29,4 @@ pipeline {
             }
         }
     }
-
-
+}
